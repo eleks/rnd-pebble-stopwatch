@@ -41,6 +41,7 @@ import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
 import com.eleks.rnd.time.sw2.api.Hardcoded;
 import com.eleks.rnd.time.sw2.api.TimeEntry;
+import com.eleks.rnd.time.sw2.api.Hardcoded.TimerListener;
 import com.eleks.rnd.time.sw2.utils.UIBundle;
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
@@ -52,17 +53,8 @@ import com.sonyericsson.extras.liveware.extension.util.control.ControlListItem;
  */
 public class ListControlExtension extends ManagedControlExtension {
 
-    /**
-     * String array with sample data to be displayed in list.
-     */
-    // private String[] mListContent = {
-    // "List Item 1", "List Item 2", "List Item 3", "List Item 4",
-    // "List Item 5",
-    // "List Item 6", "List Item 7", "List Item 8", "List Item 9",
-    // "List Item 10"
-    // };
-
     protected int mLastKnowPosition = 0;
+    private TimerListener mTimerListener = null;
 
     /**
      * @see ManagedControlExtension#ManagedControlExtension(Context, String,
@@ -83,18 +75,38 @@ public class ListControlExtension extends ManagedControlExtension {
         int startPosition = getIntent().getIntExtra(GalleryTestControl.EXTRA_INITIAL_POSITION, 0);
         mLastKnowPosition = startPosition;
         sendListPosition(R.id.listView, startPosition);
+        
+        mTimerListener = new TimerListener() {
+            @Override
+            public void onTimerStopped(String id) {
+                ControlListItem item = updateControlListItemTimer(Integer.parseInt(id), false);
+                if (item != null) {
+                    sendListItem(item);
+                }
+            }
+            
+            @Override
+            public void onTimerStarted(String id) {
+                ControlListItem item = updateControlListItemTimer(Integer.parseInt(id), true);
+                if (item != null) {
+                    sendListItem(item);
+                }
+            }
+        }; 
+        Hardcoded.DATA.setTimerListener(mTimerListener);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        Hardcoded.DATA.setTimerListener(null);
         // Position is saved into Control's Intent, possibly to be used later.
         getIntent().putExtra(GalleryTestControl.EXTRA_INITIAL_POSITION, mLastKnowPosition);
     }
 
     @Override
     public void onRequestListItem(final int layoutReference, final int listItemPosition) {
-        Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "onRequestListItem() - position " + listItemPosition);
+//        Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "onRequestListItem() - position " + listItemPosition);
         if (layoutReference != -1 && listItemPosition != -1 && layoutReference == R.id.listView) {
             ControlListItem item = createControlListItem(listItemPosition);
             if (item != null) {
@@ -123,6 +135,8 @@ public class ListControlExtension extends ManagedControlExtension {
             // pass listItem.listItemId here.
             intent.putExtra(TimeEntryControl.EXTRA_ENTRY_ID, String.valueOf(listItem.listItemPosition));
             mControlManager.startControl(intent);
+        } else if (clickType == Control.Intents.CLICK_TYPE_LONG) {
+            Hardcoded.DATA.toggleTimer(String.valueOf(listItem.listItemPosition));
         }
     }
 
@@ -145,7 +159,36 @@ public class ListControlExtension extends ManagedControlExtension {
 
         TimeEntry entry = Hardcoded.DATA.getEntries().get(position);
 
-        int icon = R.drawable.thumbnail_list_item;
+        int icon = Hardcoded.DATA.isTimer(entry) 
+                ? R.drawable.timer_green
+                : R.drawable.time_entry_item;
+        
+        Bundle[] bundleData = UIBundle.with()
+                .uri(R.id.thumbnail, ExtensionUtils.getUriString(mContext, icon))
+                .text(R.id.client, entry.getClient())
+                .text(R.id.matter, entry.getMatter())
+                .bundle();
+        
+        item.layoutData = bundleData;
+
+        return item;
+    }
+    
+    protected ControlListItem updateControlListItemTimer(int position, boolean timerOn) {
+
+        Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "updateControlListItem pos. " + position + " timer on: " + timerOn);
+        
+        ControlListItem item = new ControlListItem();
+        item.layoutReference = R.id.listView;
+        item.dataXmlLayout = R.layout.item_list;
+        item.listItemPosition = position;
+        // We use position as listItemId. Here we could use some other unique id
+        // to reference the list data
+        item.listItemId = position;
+
+        TimeEntry entry = Hardcoded.DATA.getEntries().get(position);
+
+        int icon = timerOn ? R.drawable.timer_green : R.drawable.time_entry_item;
         
         Bundle[] bundleData = UIBundle.with()
                 .uri(R.id.thumbnail, ExtensionUtils.getUriString(mContext, icon))

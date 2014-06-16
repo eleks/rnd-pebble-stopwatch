@@ -63,15 +63,67 @@ public class TimeEntryControl extends ManagedControlExtension {
      */
     private void updateLayout() {
 
-        Bundle[] bundleData = UIBundle.with()
-                .text(R.id.client, mEntry.getClient())
-                .text(R.id.matter, mEntry.getMatter())
-                .text(R.id.narrative, mEntry.getNarrative())
-                .text(R.id.work_date, mEntry.getWorkDate().toString("MMM d, yyyy"))
-                .text(R.id.hours, "00.25")
+        Bundle[] bundleData = UIBundle.with().text(R.id.client, mEntry.getClient()).text(R.id.matter, mEntry.getMatter())
+                .text(R.id.narrative, mEntry.getNarrative()).text(R.id.work_date, mEntry.getWorkDate().toString("MMM d, yyyy")).text(R.id.hours, "00.25")
                 .bundle();
 
         showLayout(R.layout.time_entry_details, bundleData);
     }
+
+    /*private void renderTextToCanvas() {
+        mBitmap = Bitmap.createBitmap(mScreenWidth, mScreenHeight * SCREEN_PAGES, Bitmap.Config.ARGB_8888);
+        mBitmap.setDensity(DisplayMetrics.DENSITY_DEFAULT);
+        mCanvas = new Canvas(mBitmap);
+        mCanvas.setDensity(DisplayMetrics.DENSITY_DEFAULT);
+
+        TextPaint tp = new TextPaint();
+        tp.setColor(Color.WHITE);
+        tp.setTextSize(18);
+
+        String text = mNote.textContent;
+
+        if (text == null) {
+            Log.d(TAG, "Empty text ...");
+            text = mContext.getString(R.string.empty_note);
+            tp.setTextSkewX(-0.25f); // Italics
+        }
+
+        StaticLayout sl = new StaticLayout(text, tp, mScreenWidth, Layout.Alignment.ALIGN_NORMAL, 1.2f, 0f, false);
+
+        mCanvas.save();
+        sl.draw(mCanvas);
+        mCanvas.restore();
+    }
+
+    @Override
+    public void onRequestListItem(final int layoutReference, final int listItemPosition) {
+        Log.d(TAG, "onRequestListItem() - position " + listItemPosition);
+        if (layoutReference != -1 && listItemPosition != -1 && layoutReference == R.id.listView) {
+            ControlListItem item = createControlListItem(listItemPosition);
+            if (item != null) {
+                sendListItem(item);
+            }
+        }
+    }
+
+    protected ControlListItem createControlListItem(int position) {
+        Bitmap bitmap = Bitmap.createBitmap(mBitmap, 0, mScreenHeight * position, mScreenWidth, mScreenHeight);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+
+        ControlListItem item = new ControlListItem();
+        item.layoutReference = R.id.listView;
+        item.dataXmlLayout = R.layout.note_content_item;
+        item.listItemPosition = position;
+        item.listItemId = position;
+
+        Bundle imageBundle = new Bundle();
+        imageBundle.putInt(Control.Intents.EXTRA_LAYOUT_REFERENCE, R.id.imageView);
+        imageBundle.putByteArray(Control.Intents.EXTRA_DATA, byteArrayOutputStream.toByteArray());
+
+        item.layoutData = new Bundle[] { imageBundle };
+
+        return item;
+    }*/
 
 }
