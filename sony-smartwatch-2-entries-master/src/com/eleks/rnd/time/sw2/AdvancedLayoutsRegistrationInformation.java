@@ -32,6 +32,8 @@ Copyright (c) 2011-2013, Sony Mobile Communications AB
 
 package com.eleks.rnd.time.sw2;
 
+import java.util.UUID;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -42,8 +44,6 @@ import com.eleks.rnd.time.sw2.controls.ControlManagerSmartWatch2;
 import com.sonyericsson.extras.liveware.aef.registration.Registration;
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
 import com.sonyericsson.extras.liveware.extension.util.registration.RegistrationInformation;
-
-import java.util.UUID;
 
 /**
  * Provides information needed during extension registration

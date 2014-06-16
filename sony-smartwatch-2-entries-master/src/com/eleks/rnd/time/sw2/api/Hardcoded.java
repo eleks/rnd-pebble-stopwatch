@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
-
 import android.util.Log;
+
+import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
 
 public class Hardcoded {
 

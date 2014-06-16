@@ -63,19 +63,12 @@
             android:textSize="@dimen/smart_watch_2_text_size_medium" />
     </RelativeLayout>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/white" />
-
-    <TextView
+    <ListView
         android:id="@+id/narrative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lighter_gray"
-        android:paddingTop="4px"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/smart_watch_2_text_size_small" />
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/ui_scrollable_narrative_height"
+        android:paddingLeft="@dimen/ui_text_left_padding"
+        android:background="@color/lighter_gray" >
+    </ListView>
 
 </LinearLayout>

@@ -37,8 +37,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
+import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.api.Hardcoded;
 import com.eleks.rnd.time.sw2.api.TimeEntry;
 import com.sonyericsson.extras.liveware.aef.control.Control;

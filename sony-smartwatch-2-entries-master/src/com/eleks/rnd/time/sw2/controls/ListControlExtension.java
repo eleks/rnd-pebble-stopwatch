@@ -37,11 +37,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
+import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.api.Hardcoded;
-import com.eleks.rnd.time.sw2.api.TimeEntry;
 import com.eleks.rnd.time.sw2.api.Hardcoded.TimerListener;
+import com.eleks.rnd.time.sw2.api.TimeEntry;
 import com.eleks.rnd.time.sw2.utils.UIBundle;
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
@@ -153,8 +153,6 @@ public class ListControlExtension extends ManagedControlExtension {
         item.layoutReference = R.id.listView;
         item.dataXmlLayout = R.layout.item_list;
         item.listItemPosition = position;
-        // We use position as listItemId. Here we could use some other unique id
-        // to reference the list data
         item.listItemId = position;
 
         TimeEntry entry = Hardcoded.DATA.getEntries().get(position);

@@ -35,6 +35,15 @@ public class UIBundle {
         return this;
     }
     
+    public UIBundle data(int id, byte[] array) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(Control.Intents.EXTRA_LAYOUT_REFERENCE, id);
+        bundle.putByteArray(Control.Intents.EXTRA_DATA, array);
+
+        bundles.add(bundle);
+        return this;
+    }
+    
     public Bundle[] bundle() {
         return bundles.toArray(new Bundle[bundles.size()]);
     }

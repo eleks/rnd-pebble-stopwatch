@@ -32,21 +32,21 @@ Copyright (c) 2011-2013, Sony Mobile Communications AB
 
 package com.eleks.rnd.time.sw2.controls;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Stack;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
+import com.eleks.rnd.time.sw2.R;
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.control.ControlExtension;
 import com.sonyericsson.extras.liveware.extension.util.control.ControlListItem;
 import com.sonyericsson.extras.liveware.extension.util.control.ControlObjectClickEvent;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Stack;
 
 /**
  * The phone control manager manages which control to currently show on the
