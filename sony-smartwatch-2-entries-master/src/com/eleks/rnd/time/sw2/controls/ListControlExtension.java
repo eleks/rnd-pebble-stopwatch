@@ -41,6 +41,7 @@ import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
 import com.eleks.rnd.time.sw2.api.Hardcoded;
 import com.eleks.rnd.time.sw2.api.TimeEntry;
+import com.eleks.rnd.time.sw2.utils.UIBundle;
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
 import com.sonyericsson.extras.liveware.extension.util.control.ControlListItem;
@@ -116,11 +117,11 @@ public class ListControlExtension extends ManagedControlExtension {
                 + ". Type was: " + (clickType == Control.Intents.CLICK_TYPE_SHORT ? "SHORT" : "LONG"));
 
         if (clickType == Control.Intents.CLICK_TYPE_SHORT) {
-            Intent intent = new Intent(mContext, GalleryTestControl.class);
+            Intent intent = new Intent(mContext, TimeEntryControl.class);
             // Here we pass the item position to the next control. It would
             // also be possible to put some unique item id in the list item and
             // pass listItem.listItemId here.
-            intent.putExtra(GalleryTestControl.EXTRA_INITIAL_POSITION, listItem.listItemPosition);
+            intent.putExtra(TimeEntryControl.EXTRA_ENTRY_ID, String.valueOf(listItem.listItemPosition));
             mControlManager.startControl(intent);
         }
     }
@@ -145,25 +146,14 @@ public class ListControlExtension extends ManagedControlExtension {
         TimeEntry entry = Hardcoded.DATA.getEntries().get(position);
 
         int icon = R.drawable.thumbnail_list_item;
-        // Icon data
-        Bundle iconBundle = new Bundle();
-        iconBundle.putInt(Control.Intents.EXTRA_LAYOUT_REFERENCE, R.id.thumbnail);
-        iconBundle.putString(Control.Intents.EXTRA_DATA_URI, ExtensionUtils.getUriString(mContext, icon));
-
-        // Client data
-        Bundle headerBundle = new Bundle();
-        headerBundle.putInt(Control.Intents.EXTRA_LAYOUT_REFERENCE, R.id.client);
-        headerBundle.putString(Control.Intents.EXTRA_TEXT, entry.getClient());
-
-        // Matter data
-        Bundle bodyBundle = new Bundle();
-        bodyBundle.putInt(Control.Intents.EXTRA_LAYOUT_REFERENCE, R.id.matter);
-        bodyBundle.putString(Control.Intents.EXTRA_TEXT, entry.getMatter());
-
-        item.layoutData = new Bundle[3];
-        item.layoutData[0] = iconBundle;
-        item.layoutData[1] = headerBundle;
-        item.layoutData[2] = bodyBundle;
+        
+        Bundle[] bundleData = UIBundle.with()
+                .uri(R.id.thumbnail, ExtensionUtils.getUriString(mContext, icon))
+                .text(R.id.client, entry.getClient())
+                .text(R.id.matter, entry.getMatter())
+                .bundle();
+        
+        item.layoutData = bundleData;
 
         return item;
     }

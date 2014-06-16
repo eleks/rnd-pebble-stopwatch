@@ -23,24 +23,34 @@ public class Hardcoded {
     }
 
     private void createEntries() {
-        entries.add(createEntry("Google", "Project X Glass"));
-        entries.add(createEntry("Boston Consulting Group", "International company consulting"));
-        entries.add(createEntry("Edward Jones", "Financial Services & Insurance"));
-        entries.add(createEntry("salesforce", "Information Technology"));
-        entries.add(createEntry("DPR Construction", "Construction & Real Estate"));
-        entries.add(createEntry("Burns & McDonnell", "Engineering Consulting"));
-        entries.add(createEntry("USAA", "Corporate Insurance"));
-        entries.add(createEntry("Plante Moran", "Management Consulting"));
-        entries.add(createEntry("NuStar Energy", "Salary Compensation Strategy"));
+        entries.add(createEntry(entries.size(), "Google", "Project X Glass"));
+        entries.add(createEntry(entries.size(), "Boston Consulting Group", "International company consulting"));
+        entries.add(createEntry(entries.size(), "Edward Jones", "Financial Services & Insurance"));
+        entries.add(createEntry(entries.size(), "salesforce", "Information Technology"));
+        entries.add(createEntry(entries.size(), "DPR Construction", "Construction & Real Estate"));
+        entries.add(createEntry(entries.size(), "Burns & McDonnell", "Engineering Consulting"));
+        entries.add(createEntry(entries.size(), "USAA", "Corporate Insurance"));
+        entries.add(createEntry(entries.size(), "Plante Moran", "Management Consulting"));
+        entries.add(createEntry(entries.size(), "NuStar Energy", "Salary Compensation Strategy"));
     }
 
-    private TimeEntry createEntry(String client, String matter) {
+    private TimeEntry createEntry(int id, String client, String matter) {
         String narrative = narrativeSamples[r.nextInt(narrativeSamples.length)];
-        return new TimeEntry(client, matter, narrative);
+        return new TimeEntry(String.valueOf(id), client, matter, narrative);
     }
 
     public List<TimeEntry> getEntries() {
         return Collections.unmodifiableList(entries);
+    }
+    
+    /**
+     * For demo purposes, id is a position in a list.
+     * For real purposes, something like UUID should be used.
+     * @param id
+     * @return
+     */
+    public TimeEntry getById(String id) {
+        return entries.get(Integer.parseInt(id));
     }
 
     public static final Hardcoded DATA = new Hardcoded();

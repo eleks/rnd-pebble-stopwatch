@@ -12,9 +12,8 @@
         android:layout_height="28px"
         android:background="@android:color/black"
         android:gravity="left|center_vertical"
-        android:paddingLeft="6px"
+        android:paddingLeft="@dimen/ui_text_left_padding"
         android:singleLine="true"
-        android:text="Boston Colulting Agency Lorem Ipsulum"
         android:textColor="@android:color/white"
         android:textSize="@dimen/smart_watch_2_text_size_medium"
         android:textStyle="bold" />
@@ -25,23 +24,44 @@
         android:layout_height="28px"
         android:background="@android:color/white"
         android:gravity="left|center_vertical"
-        android:paddingLeft="6px"
+        android:paddingLeft="@dimen/ui_text_left_padding"
         android:singleLine="true"
-        android:text="Financial consulting industry"
         android:textColor="@android:color/black"
         android:textSize="@dimen/smart_watch_2_text_size_medium" />
 
-    <TextView
-        android:id="@+id/work_date"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/really_dark_gray"
-        android:gravity="right"
-        android:paddingRight="4px"
-        android:singleLine="true"
-        android:text="June 17, 2014"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/smart_watch_2_text_size_small" />
+        android:layout_height="28px"
+        android:background="@color/really_dark_gray" >
+
+        <TextView
+            android:id="@+id/hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/ui_text_left_padding"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/smart_watch_2_text_size_large" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/work_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/ui_text_left_padding"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/smart_watch_2_text_size_medium" />
+    </RelativeLayout>
 
     <View
         android:id="@+id/divider"
@@ -55,7 +75,6 @@
         android:layout_height="wrap_content"
         android:background="@color/lighter_gray"
         android:paddingTop="4px"
-        android:text="According to the show, she was the deadliest woman in the world with a knife. And she knew a zillion old jokes her grandfather, an old vaudevillian, taught her. And if we would have got picked up, they would have worked in a gimmick where every show I would have told another joke."
         android:textColor="@android:color/black"
         android:textSize="@dimen/smart_watch_2_text_size_small" />
 

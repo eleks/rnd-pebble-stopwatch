@@ -1,25 +1,29 @@
 package com.eleks.rnd.time.sw2.api;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
-public class TimeEntry implements Serializable {
+public class TimeEntry {
 
+    private final String id;
     private String client;
     private String matter;
     private String narrative;
+    private DateTime workDate;
     private List<Interval> intervals;
 
-    public static final TimeEntry EMPTY = new TimeEntry("Client", "Matter", "Sample narrative.");
+    public static final TimeEntry EMPTY = new TimeEntry("-1", "Client", "Matter", "Sample narrative.");
 
-    public TimeEntry(String client, String matter, String narrative) {
+    public TimeEntry(String id, String client, String matter, String narrative) {
+        this.id = id;
         this.client = client;
         this.matter = matter;
         this.narrative = narrative;
+        this.workDate = new DateTime();
         intervals = new ArrayList<Interval>();
     }
 
@@ -53,6 +57,18 @@ public class TimeEntry implements Serializable {
 
     public void addInterval(Interval interval) {
         this.intervals.add(interval);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public DateTime getWorkDate() {
+        return workDate;
+    }
+
+    public void setWorkDate(DateTime workDate) {
+        this.workDate = workDate;
     }
 
 }

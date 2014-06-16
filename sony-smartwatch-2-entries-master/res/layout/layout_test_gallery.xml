@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="6px"
+            android:paddingLeft="@dimen/ui_text_left_padding"
             android:text="Below is a gallery"
             android:textColor="@android:color/white"
             android:textSize="@dimen/smart_watch_2_text_size_medium"
