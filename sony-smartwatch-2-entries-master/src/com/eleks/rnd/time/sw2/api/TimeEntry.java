@@ -2,10 +2,13 @@ package com.eleks.rnd.time.sw2.api;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.joda.time.Interval;
+import org.joda.time.Minutes;
 
 public class TimeEntry {
 
@@ -69,6 +72,15 @@ public class TimeEntry {
 
     public void setWorkDate(DateTime workDate) {
         this.workDate = workDate;
+    }
+
+    public Duration getIntervalsDuration() {
+        long millis = 0;
+        for (Interval interval : intervals) {
+            millis += interval.toDurationMillis();
+        }
+        Duration accumulated = Duration.millis(millis);
+        return accumulated;
     }
 
 }

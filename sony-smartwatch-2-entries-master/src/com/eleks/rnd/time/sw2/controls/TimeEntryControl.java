@@ -2,6 +2,10 @@ package com.eleks.rnd.time.sw2.controls;
 
 import java.io.ByteArrayOutputStream;
 
+import org.joda.time.Period;
+import org.joda.time.format.PeriodFormatter;
+import org.joda.time.format.PeriodFormatterBuilder;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -30,7 +34,16 @@ public class TimeEntryControl extends ManagedControlExtension {
     public final static int LIST_VIEW_WIDTH_PX = 220 - 6 - 6; // - padLeft - padRight
 
     private static final String TAG = "TEC";
-
+    private static final PeriodFormatter hoursFormatter = new PeriodFormatterBuilder()
+        .printZeroAlways()
+        .minimumPrintedDigits(2)
+        .appendHours()
+        .appendSeparator(":")
+        .appendMinutes()
+        .appendSeparator(":")
+        .appendSeconds()
+        .toFormatter();
+    
     private TimeEntry mEntry = null;
 
     private Bitmap mBitmap;
@@ -85,7 +98,7 @@ public class TimeEntryControl extends ManagedControlExtension {
                 .text(R.id.client, mEntry.getClient())
                 .text(R.id.matter, mEntry.getMatter())
                 .text(R.id.work_date, mEntry.getWorkDate().toString("MMM d, yyyy"))
-                .text(R.id.hours, "00.25")
+                .text(R.id.hours, hoursFormatter.print(new Period(mEntry.getIntervalsDuration())))
                 .bundle();
 
         int layout = Hardcoded.DATA.isTimer(mEntry)

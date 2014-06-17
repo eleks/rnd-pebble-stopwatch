@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
 import android.util.Log;
 
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
@@ -27,6 +30,7 @@ public class Hardcoded {
 
     private boolean timerIsOn = false;
     private String currentTimerId = "-1";
+    private DateTime currentTimerStart = new DateTime();
     private TimerListener timerListener = null;
 
     private List<TimeEntry> entries = new ArrayList<TimeEntry>();
@@ -81,11 +85,13 @@ public class Hardcoded {
 
     private void startTimer(String id) {
         Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "startTimer: " + id);
-        if (timerListener != null)
-            timerListener.onTimerStarted(id);
-        
+
+        currentTimerStart = new DateTime();
         timerIsOn = true;
         currentTimerId = id;
+
+        if (timerListener != null)
+            timerListener.onTimerStarted(id);
     }
 
     private void stopTimer(String id) {
@@ -94,12 +100,18 @@ public class Hardcoded {
         }
         
         Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "stopTimer: " + id);
-        // TODO add timer accumulation business logic
-        if (timerListener != null)
-            timerListener.onTimerStopped(id);
+
+        DateTime timerEnd = new DateTime();
+        Interval interval = new Interval(currentTimerStart, timerEnd);
+        TimeEntry entry = getById(currentTimerId);
+        entry.addInterval(interval);
         
         timerIsOn = false;
         currentTimerId = "-1";
+
+        if (timerListener != null)
+            timerListener.onTimerStopped(id);
+        
     }
 
     public void setTimerListener(TimerListener timerListener) {

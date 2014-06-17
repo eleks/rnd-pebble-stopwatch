@@ -82,6 +82,7 @@ public class ListControlExtension extends ManagedControlExtension {
                 ControlListItem item = updateControlListItemTimer(Integer.parseInt(id), false);
                 if (item != null) {
                     sendListItem(item);
+                    startVibrator(300, 0, 1);
                 }
             }
             
@@ -90,6 +91,7 @@ public class ListControlExtension extends ManagedControlExtension {
                 ControlListItem item = updateControlListItemTimer(Integer.parseInt(id), true);
                 if (item != null) {
                     sendListItem(item);
+                    startVibrator(600, 0, 1);
                 }
             }
         }; 
