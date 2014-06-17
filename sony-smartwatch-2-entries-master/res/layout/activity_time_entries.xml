@@ -3,12 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     android:orientation="vertical" >
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/darker_gray"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:padding="16dp"
+        android:scrollbarStyle="outsideOverlay" >
     </ListView>
 
 </LinearLayout>
