@@ -84,12 +84,15 @@ public class TimeEntryControl extends ManagedControlExtension {
         Bundle[] bundleData = UIBundle.with()
                 .text(R.id.client, mEntry.getClient())
                 .text(R.id.matter, mEntry.getMatter())
-//                .text(R.id.narrative, mEntry.getNarrative())
                 .text(R.id.work_date, mEntry.getWorkDate().toString("MMM d, yyyy"))
                 .text(R.id.hours, "00.25")
                 .bundle();
 
-        showLayout(R.layout.time_entry_details, bundleData);
+        int layout = Hardcoded.DATA.isTimer(mEntry)
+                ? R.layout.time_entry_details_timer_on
+                : R.layout.time_entry_details;
+        
+        showLayout(layout, bundleData);
     }
 
     private void renderTextToCanvas() {

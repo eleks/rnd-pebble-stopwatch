@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/smart_watch_2_control_width"
+    android:layout_height="@dimen/smart_watch_2_control_height"
+    android:orientation="vertical"
+    tools:ignore="PxUsage,UselessParent,HardcodedText" >
+
+    <TextView
+        android:id="@+id/client"
+        android:layout_width="match_parent"
+        android:layout_height="28px"
+        android:background="@android:color/black"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="@dimen/ui_text_left_padding"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/smart_watch_2_text_size_medium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/matter"
+        android:layout_width="match_parent"
+        android:layout_height="28px"
+        android:background="@android:color/white"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="@dimen/ui_text_left_padding"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/smart_watch_2_text_size_medium" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="28px"
+        android:background="@color/green" >
+
+        <TextView
+            android:id="@+id/hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/ui_text_left_padding"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/smart_watch_2_text_size_large" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="26px"
+            android:layout_centerInParent="true"
+            android:src="@drawable/stopwatch_start"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/work_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/ui_text_left_padding"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/smart_watch_2_text_size_medium" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/narrative"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/ui_scrollable_narrative_height"
+        android:background="@color/lighter_gray"
+        android:paddingLeft="@dimen/ui_text_left_padding" >
+    </ListView>
+
+</LinearLayout>
