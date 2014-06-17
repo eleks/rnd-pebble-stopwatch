@@ -32,77 +32,73 @@ Copyright (c) 2011-2013, Sony Mobile Communications AB
 
 package com.eleks.rnd.time.sw2;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import java.util.List;
+
+import android.app.ListActivity;
+import android.content.Context;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceActivity;
-import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import com.eleks.rnd.time.sw2.api.Hardcoded;
+import com.eleks.rnd.time.sw2.api.TimeEntry;
 
 /**
  * The sample control preference activity handles the preferences for the sample
  * control extension.
  */
-public class AdvancedLayoutsPreferenceActivity extends PreferenceActivity {
+public class AdvancedLayoutsPreferenceActivity extends ListActivity {
 
-    private static final int DIALOG_READ_ME = 1;
-
-    @SuppressWarnings("deprecation")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_time_entries);
 
-        // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.preference);
-
-        // Handle read me
-        Preference preference = findPreference(getText(R.string.preference_key_read_me));
-        preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                showDialog(DIALOG_READ_ME);
-                return true;
-            }
-        });
-
+        ListAdapter customAdapter = new ListAdapter(this, R.layout.activity_time_entries_item, Hardcoded.DATA.getEntries());
+        getListView().setAdapter(customAdapter);
     }
 
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        Dialog dialog = null;
+    public class ListAdapter extends ArrayAdapter<TimeEntry> {
 
-        switch (id) {
-        case DIALOG_READ_ME:
-            dialog = createReadMeDialog();
-            break;
-        default:
-            Log.w(AdvancedLayoutsExtensionService.LOG_TAG, "Not a valid dialog id: " + id);
-            break;
+        public ListAdapter(Context context, int textViewResourceId) {
+            super(context, textViewResourceId);
         }
 
-        return dialog;
+        public ListAdapter(Context context, int resource, List<TimeEntry> items) {
+            super(context, resource, items);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View v = convertView;
+
+            if (v == null) {
+                LayoutInflater vi;
+                vi = LayoutInflater.from(getContext());
+                v = vi.inflate(R.layout.activity_time_entries_item, null);
+            }
+
+            TimeEntry p = getItem(position);
+
+            if (p != null) {
+
+                TextView tt1 = (TextView) v.findViewById(R.id.client);
+                TextView tt3 = (TextView) v.findViewById(R.id.matter);
+
+                if (tt1 != null) {
+                    tt1.setText(p.getClient());
+                }
+                if (tt3 != null) {
+                    tt3.setText(p.getMatter());
+                }
+            }
+
+            return v;
+
+        }
     }
-
-    /**
-     * Create the Read me dialog
-     * 
-     * @return the Dialog
-     */
-    private Dialog createReadMeDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.preference_option_read_me_txt).setTitle(R.string.preference_option_read_me).setIcon(android.R.drawable.ic_dialog_info)
-                .setPositiveButton(android.R.string.ok, new OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        return builder.create();
-    }
-
 }

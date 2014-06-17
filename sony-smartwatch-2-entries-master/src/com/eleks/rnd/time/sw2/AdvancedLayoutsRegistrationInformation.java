@@ -103,8 +103,8 @@ public class AdvancedLayoutsRegistrationInformation extends RegistrationInformat
     @Override
     public ContentValues getExtensionRegistrationConfiguration() {
         Log.d(AdvancedLayoutsExtensionService.LOG_TAG, "getExtensionRegistrationConfiguration");
-        String iconHostapp = ExtensionUtils.getUriString(mContext, R.drawable.icon);
-        String iconExtension = ExtensionUtils.getUriString(mContext, R.drawable.icon_extension);
+        String iconHostapp = ExtensionUtils.getUriString(mContext, R.drawable.icon_clock);
+        String iconExtension = ExtensionUtils.getUriString(mContext, R.drawable.icon_extension_timer);
 
         ContentValues values = new ContentValues();
 
