@@ -4,7 +4,9 @@
     <!-- Name of app, shown when installing/uninstalling extension -->
     <string name="app_name">Time Capture</string>
     <!-- Title of preference activity -->
-    <string name="preference_activity_title">Time Capture</string>
+    <string name="time_entries_list_title">Time Capture</string>
+    <!-- Title of details activity -->
+    <string name="time_entry_details_title">Time Entry Details</string>
     <!-- Name of extension, shown in preferences -->
     <string name="extension_name">Time Capture</string>
     <!-- Configuration title shown in preferences -->

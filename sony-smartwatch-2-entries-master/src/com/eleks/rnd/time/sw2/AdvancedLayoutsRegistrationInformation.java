@@ -108,7 +108,7 @@ public class AdvancedLayoutsRegistrationInformation extends RegistrationInformat
 
         ContentValues values = new ContentValues();
 
-        values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY, AdvancedLayoutsPreferenceActivity.class.getName());
+        values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY, TimeCaptureListActivity.class.getName());
         values.put(Registration.ExtensionColumns.CONFIGURATION_TEXT, mContext.getString(R.string.configuration_text));
         values.put(Registration.ExtensionColumns.NAME, mContext.getString(R.string.extension_name));
         values.put(Registration.ExtensionColumns.EXTENSION_KEY, getExtensionKey());

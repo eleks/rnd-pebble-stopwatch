@@ -21,6 +21,7 @@ import android.util.TypedValue;
 import com.eleks.rnd.time.sw2.R;
 import com.eleks.rnd.time.sw2.api.Hardcoded;
 import com.eleks.rnd.time.sw2.api.TimeEntry;
+import com.eleks.rnd.time.sw2.utils.Time;
 import com.eleks.rnd.time.sw2.utils.UIBundle;
 import com.sonyericsson.extras.liveware.aef.control.Control;
 import com.sonyericsson.extras.liveware.aef.registration.Registration;
@@ -34,15 +35,6 @@ public class TimeEntryControl extends ManagedControlExtension {
     public final static int LIST_VIEW_WIDTH_PX = 220 - 6 - 6; // - padLeft - padRight
 
     private static final String TAG = "TEC";
-    private static final PeriodFormatter hoursFormatter = new PeriodFormatterBuilder()
-        .printZeroAlways()
-        .minimumPrintedDigits(2)
-        .appendHours()
-        .appendSeparator(":")
-        .appendMinutes()
-        .appendSeparator(":")
-        .appendSeconds()
-        .toFormatter();
     
     private TimeEntry mEntry = null;
 
@@ -98,7 +90,7 @@ public class TimeEntryControl extends ManagedControlExtension {
                 .text(R.id.client, mEntry.getClient())
                 .text(R.id.matter, mEntry.getMatter())
                 .text(R.id.work_date, mEntry.getWorkDate().toString("MMM d, yyyy"))
-                .text(R.id.hours, hoursFormatter.print(new Period(mEntry.getIntervalsDuration())))
+                .text(R.id.hours, Time.HOURS.print(new Period(mEntry.getIntervalsDuration())))
                 .bundle();
 
         int layout = Hardcoded.DATA.isTimer(mEntry)

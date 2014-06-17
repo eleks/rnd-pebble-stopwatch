@@ -7,6 +7,12 @@ import android.os.Bundle;
 
 import com.sonyericsson.extras.liveware.aef.control.Control;
 
+/**
+ * 
+ * Class for easy UI updates of layouts in SW2.
+ * @author ostap.andrusiv
+ *
+ */
 public class UIBundle {
     
     private List<Bundle> bundles = new ArrayList<Bundle>();

@@ -8,6 +8,7 @@ import java.util.Random;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.eleks.rnd.time.sw2.AdvancedLayoutsExtensionService;
@@ -67,6 +68,10 @@ public class Hardcoded {
      * @return
      */
     public TimeEntry getById(String id) {
+        if (TextUtils.isEmpty(id)) {
+            return TimeEntry.EMPTY;
+        }
+        
         return entries.get(Integer.parseInt(id));
     }
 
