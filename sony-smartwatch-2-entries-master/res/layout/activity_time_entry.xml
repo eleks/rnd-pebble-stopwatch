@@ -1,89 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    android:orientation="vertical" >
+    android:fillViewport="true" >
 
     <LinearLayout
+        android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/item_background"
-        android:orientation="vertical"
-        android:padding="10dp" >
+        android:background="@color/gray"
+        android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/client"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Brocer Cool Company"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_margin="16dp"
+            android:background="@drawable/item_background"
+            android:orientation="vertical"
+            android:padding="10dp" >
 
-        <TextView
-            android:id="@+id/matter"
+            <TextView
+                android:id="@+id/client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brocer Cool Company"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/matter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corporate Insurance Practice"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Corporate Insurance Practice"
-            android:textSize="16sp" />
-    </LinearLayout>
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/item_background"
+            android:padding="10dp" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/item_background"
-        android:padding="10dp" >
+            <TextView
+                android:id="@+id/hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="00:05:25" />
 
-        <TextView
-            android:id="@+id/hours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:singleLine="true"
-            android:text="00:05:25" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:background="#77000000" />
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="28dp"
-            android:layout_centerInParent="true"
-            android:background="#77000000" />
-
-        <!--
+            <!--
             ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:src="@drawable/stopwatch_start"
             tools:ignore="ContentDescription"
-        -->
+            -->
+
+            <TextView
+                android:id="@+id/work_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="June 17, 2014" />
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/work_date"
-            android:layout_width="wrap_content"
+            android:id="@+id/narrative"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:singleLine="true"
-            android:text="June 17, 2014" />
-    </RelativeLayout>
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/item_background"
+            android:padding="10dp"
+            android:text="Mumblecore Thundercats lo-fi craft beer, hoodie asymmetrical selfies Vice. Cornhole Brooklyn cray, pork belly put a bird on it quinoa small batch Thundercats polaroid ennui brunch. McSweeney&apos;s ennui yr, wayfarers selfies mumblecore blog aesthetic seitan vinyl Vice meggings street art. Ugh skateboard butcher slow-carb crucifix. Semiotics Intelligentsia retro, fingerstache Blue Bottle put a bird on it kitsch. Blog selfies selvage, ugh tousled letterpress semiotics Banksy. Austin sriracha quinoa, skateboard Portland lo-fi YOLO VHS tote bag deep v master cleanse Pitchfork beard pork belly." >
+        </TextView>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/narrative"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/item_background"
-        android:padding="10dp"
-        android:text="Mumblecore Thundercats lo-fi craft beer, hoodie asymmetrical selfies Vice. Cornhole Brooklyn cray, pork belly put a bird on it quinoa small batch Thundercats polaroid ennui brunch. McSweeney&apos;s ennui yr, wayfarers selfies mumblecore blog aesthetic seitan vinyl Vice meggings street art. Ugh skateboard butcher slow-carb crucifix. Semiotics Intelligentsia retro, fingerstache Blue Bottle put a bird on it kitsch. Blog selfies selvage, ugh tousled letterpress semiotics Banksy. Austin sriracha quinoa, skateboard Portland lo-fi YOLO VHS tote bag deep v master cleanse Pitchfork beard pork belly." >
-    </TextView>
-
-</LinearLayout>
+</ScrollView>
