@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB85A9A18FD39E80073CF22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85A9918FD39E80073CF22 /* Foundation.framework */; };
+		CEB85A9C18FD39E80073CF22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85A9B18FD39E80073CF22 /* CoreGraphics.framework */; };
+		CEB85A9E18FD39E90073CF22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85A9D18FD39E90073CF22 /* UIKit.framework */; };
+		CEB85AA418FD39E90073CF22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB85AA218FD39E90073CF22 /* InfoPlist.strings */; };
+		CEB85AA618FD39E90073CF22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85AA518FD39E90073CF22 /* main.m */; };
+		CEB85AAA18FD39E90073CF22 /* EZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85AA918FD39E90073CF22 /* EZAppDelegate.m */; };
+		CEB85AAD18FD39E90073CF22 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB85AAB18FD39E90073CF22 /* Main_iPhone.storyboard */; };
+		CEB85AB018FD39E90073CF22 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB85AAE18FD39E90073CF22 /* Main_iPad.storyboard */; };
+		CEB85AB318FD39E90073CF22 /* EZMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85AB218FD39E90073CF22 /* EZMasterViewController.m */; };
+		CEB85AB618FD39E90073CF22 /* EZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85AB518FD39E90073CF22 /* EZDetailViewController.m */; };
+		CEB85AB818FD39E90073CF22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB85AB718FD39E90073CF22 /* Images.xcassets */; };
+		CEB85ABF18FD39E90073CF22 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85ABE18FD39E90073CF22 /* XCTest.framework */; };
+		CEB85AC018FD39E90073CF22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85A9918FD39E80073CF22 /* Foundation.framework */; };
+		CEB85AC118FD39E90073CF22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85A9D18FD39E90073CF22 /* UIKit.framework */; };
+		CEB85AC918FD39E90073CF22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEB85AC718FD39E90073CF22 /* InfoPlist.strings */; };
+		CEB85ACB18FD39E90073CF22 /* TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85ACA18FD39E90073CF22 /* TimerTests.m */; };
+		CEB85AD518FD3B500073CF22 /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AD418FD3B500073CF22 /* PebbleVendor.framework */; };
+		CEB85AD718FD3B560073CF22 /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AD618FD3B560073CF22 /* PebbleKit.framework */; };
+		CEB85AD918FD3B760073CF22 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AD818FD3B760073CF22 /* ExternalAccessory.framework */; };
+		CEB85ADB18FD3B810073CF22 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85ADA18FD3B810073CF22 /* libz.dylib */; };
+		CEB85ADD18FD3B8E0073CF22 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85ADC18FD3B8E0073CF22 /* CoreBluetooth.framework */; };
+		CEB85ADF18FD3B980073CF22 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85ADE18FD3B980073CF22 /* CoreMotion.framework */; };
+		CEB85AE118FD3BAD0073CF22 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AE018FD3BAD0073CF22 /* MessageUI.framework */; };
+		CEB85AE318FD4AA70073CF22 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AE218FD4AA70073CF22 /* AddressBookUI.framework */; };
+		CEB85AE518FD4AAE0073CF22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB85AE418FD4AAE0073CF22 /* CoreLocation.framework */; };
+		CEB85AE818FD55F20073CF22 /* EZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB85AE718FD55F20073CF22 /* EZTableViewCell.m */; };
+		CECA3AEE191774EF0019E992 /* OSSpritz.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA3AEB191774EF0019E992 /* OSSpritz.m */; };
+		CECA3AEF191774EF0019E992 /* OSSpritzLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA3AED191774EF0019E992 /* OSSpritzLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB85AC218FD39E90073CF22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB85A8E18FD39E80073CF22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB85A9518FD39E80073CF22;
+			remoteInfo = Timer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEB85A9618FD39E80073CF22 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB85A9918FD39E80073CF22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEB85A9B18FD39E80073CF22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CEB85A9D18FD39E90073CF22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CEB85AA118FD39E90073CF22 /* Timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Timer-Info.plist"; sourceTree = "<group>"; };
+		CEB85AA318FD39E90073CF22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEB85AA518FD39E90073CF22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEB85AA718FD39E90073CF22 /* Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timer-Prefix.pch"; sourceTree = "<group>"; };
+		CEB85AA818FD39E90073CF22 /* EZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZAppDelegate.h; sourceTree = "<group>"; };
+		CEB85AA918FD39E90073CF22 /* EZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZAppDelegate.m; sourceTree = "<group>"; };
+		CEB85AAC18FD39E90073CF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CEB85AAF18FD39E90073CF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CEB85AB118FD39E90073CF22 /* EZMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZMasterViewController.h; sourceTree = "<group>"; };
+		CEB85AB218FD39E90073CF22 /* EZMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZMasterViewController.m; sourceTree = "<group>"; };
+		CEB85AB418FD39E90073CF22 /* EZDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDetailViewController.h; sourceTree = "<group>"; };
+		CEB85AB518FD39E90073CF22 /* EZDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDetailViewController.m; sourceTree = "<group>"; };
+		CEB85AB718FD39E90073CF22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEB85ABD18FD39E90073CF22 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB85ABE18FD39E90073CF22 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CEB85AC618FD39E90073CF22 /* TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerTests-Info.plist"; sourceTree = "<group>"; };
+		CEB85AC818FD39E90073CF22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEB85ACA18FD39E90073CF22 /* TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerTests.m; sourceTree = "<group>"; };
+		CEB85AD418FD3B500073CF22 /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
+		CEB85AD618FD3B560073CF22 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		CEB85AD818FD3B760073CF22 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		CEB85ADA18FD3B810073CF22 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CEB85ADC18FD3B8E0073CF22 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CEB85ADE18FD3B980073CF22 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		CEB85AE018FD3BAD0073CF22 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CEB85AE218FD4AA70073CF22 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		CEB85AE418FD4AAE0073CF22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEB85AE618FD55F20073CF22 /* EZTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZTableViewCell.h; sourceTree = "<group>"; };
+		CEB85AE718FD55F20073CF22 /* EZTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZTableViewCell.m; sourceTree = "<group>"; };
+		CECA3AEA191774EF0019E992 /* OSSpritz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSpritz.h; sourceTree = "<group>"; };
+		CECA3AEB191774EF0019E992 /* OSSpritz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpritz.m; sourceTree = "<group>"; };
+		CECA3AEC191774EF0019E992 /* OSSpritzLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSpritzLabel.h; sourceTree = "<group>"; };
+		CECA3AED191774EF0019E992 /* OSSpritzLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpritzLabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB85A9318FD39E80073CF22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB85AE518FD4AAE0073CF22 /* CoreLocation.framework in Frameworks */,
+				CEB85AE318FD4AA70073CF22 /* AddressBookUI.framework in Frameworks */,
+				CEB85AE118FD3BAD0073CF22 /* MessageUI.framework in Frameworks */,
+				CEB85ADF18FD3B980073CF22 /* CoreMotion.framework in Frameworks */,
+				CEB85ADD18FD3B8E0073CF22 /* CoreBluetooth.framework in Frameworks */,
+				CEB85ADB18FD3B810073CF22 /* libz.dylib in Frameworks */,
+				CEB85AD918FD3B760073CF22 /* ExternalAccessory.framework in Frameworks */,
+				CEB85A9C18FD39E80073CF22 /* CoreGraphics.framework in Frameworks */,
+				CEB85A9E18FD39E90073CF22 /* UIKit.framework in Frameworks */,
+				CEB85AD518FD3B500073CF22 /* PebbleVendor.framework in Frameworks */,
+				CEB85AD718FD3B560073CF22 /* PebbleKit.framework in Frameworks */,
+				CEB85A9A18FD39E80073CF22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB85ABA18FD39E90073CF22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB85ABF18FD39E90073CF22 /* XCTest.framework in Frameworks */,
+				CEB85AC118FD39E90073CF22 /* UIKit.framework in Frameworks */,
+				CEB85AC018FD39E90073CF22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB85A8D18FD39E80073CF22 = {
+			isa = PBXGroup;
+			children = (
+				CEB85A9F18FD39E90073CF22 /* Timer */,
+				CEB85AC418FD39E90073CF22 /* TimerTests */,
+				CEB85A9818FD39E80073CF22 /* Frameworks */,
+				CEB85A9718FD39E80073CF22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB85A9718FD39E80073CF22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB85A9618FD39E80073CF22 /* Timer.app */,
+				CEB85ABD18FD39E90073CF22 /* TimerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB85A9818FD39E80073CF22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEB85AE418FD4AAE0073CF22 /* CoreLocation.framework */,
+				CEB85AE218FD4AA70073CF22 /* AddressBookUI.framework */,
+				CEB85AE018FD3BAD0073CF22 /* MessageUI.framework */,
+				CEB85ADE18FD3B980073CF22 /* CoreMotion.framework */,
+				CEB85ADC18FD3B8E0073CF22 /* CoreBluetooth.framework */,
+				CEB85ADA18FD3B810073CF22 /* libz.dylib */,
+				CEB85AD818FD3B760073CF22 /* ExternalAccessory.framework */,
+				CEB85AD618FD3B560073CF22 /* PebbleKit.framework */,
+				CEB85AD418FD3B500073CF22 /* PebbleVendor.framework */,
+				CEB85A9918FD39E80073CF22 /* Foundation.framework */,
+				CEB85A9B18FD39E80073CF22 /* CoreGraphics.framework */,
+				CEB85A9D18FD39E90073CF22 /* UIKit.framework */,
+				CEB85ABE18FD39E90073CF22 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEB85A9F18FD39E90073CF22 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				CECA3AE9191774EF0019E992 /* OSSpritz */,
+				CEB85AA818FD39E90073CF22 /* EZAppDelegate.h */,
+				CEB85AA918FD39E90073CF22 /* EZAppDelegate.m */,
+				CEB85AAB18FD39E90073CF22 /* Main_iPhone.storyboard */,
+				CEB85AAE18FD39E90073CF22 /* Main_iPad.storyboard */,
+				CEB85AB118FD39E90073CF22 /* EZMasterViewController.h */,
+				CEB85AB218FD39E90073CF22 /* EZMasterViewController.m */,
+				CEB85AB418FD39E90073CF22 /* EZDetailViewController.h */,
+				CEB85AB518FD39E90073CF22 /* EZDetailViewController.m */,
+				CEB85AB718FD39E90073CF22 /* Images.xcassets */,
+				CEB85AA018FD39E90073CF22 /* Supporting Files */,
+				CEB85AE618FD55F20073CF22 /* EZTableViewCell.h */,
+				CEB85AE718FD55F20073CF22 /* EZTableViewCell.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		CEB85AA018FD39E90073CF22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB85AA118FD39E90073CF22 /* Timer-Info.plist */,
+				CEB85AA218FD39E90073CF22 /* InfoPlist.strings */,
+				CEB85AA518FD39E90073CF22 /* main.m */,
+				CEB85AA718FD39E90073CF22 /* Timer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEB85AC418FD39E90073CF22 /* TimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEB85ACA18FD39E90073CF22 /* TimerTests.m */,
+				CEB85AC518FD39E90073CF22 /* Supporting Files */,
+			);
+			path = TimerTests;
+			sourceTree = "<group>";
+		};
+		CEB85AC518FD39E90073CF22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB85AC618FD39E90073CF22 /* TimerTests-Info.plist */,
+				CEB85AC718FD39E90073CF22 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CECA3AE9191774EF0019E992 /* OSSpritz */ = {
+			isa = PBXGroup;
+			children = (
+				CECA3AEA191774EF0019E992 /* OSSpritz.h */,
+				CECA3AEB191774EF0019E992 /* OSSpritz.m */,
+				CECA3AEC191774EF0019E992 /* OSSpritzLabel.h */,
+				CECA3AED191774EF0019E992 /* OSSpritzLabel.m */,
+			);
+			path = OSSpritz;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB85A9518FD39E80073CF22 /* Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB85ACE18FD39E90073CF22 /* Build configuration list for PBXNativeTarget "Timer" */;
+			buildPhases = (
+				CEB85A9218FD39E80073CF22 /* Sources */,
+				CEB85A9318FD39E80073CF22 /* Frameworks */,
+				CEB85A9418FD39E80073CF22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timer;
+			productName = Timer;
+			productReference = CEB85A9618FD39E80073CF22 /* Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEB85ABC18FD39E90073CF22 /* TimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB85AD118FD39E90073CF22 /* Build configuration list for PBXNativeTarget "TimerTests" */;
+			buildPhases = (
+				CEB85AB918FD39E90073CF22 /* Sources */,
+				CEB85ABA18FD39E90073CF22 /* Frameworks */,
+				CEB85ABB18FD39E90073CF22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB85AC318FD39E90073CF22 /* PBXTargetDependency */,
+			);
+			name = TimerTests;
+			productName = TimerTests;
+			productReference = CEB85ABD18FD39E90073CF22 /* TimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB85A8E18FD39E80073CF22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Eleks;
+				TargetAttributes = {
+					CEB85A9518FD39E80073CF22 = {
+						DevelopmentTeam = JAXGQHW8J6;
+					};
+					CEB85ABC18FD39E90073CF22 = {
+						TestTargetID = CEB85A9518FD39E80073CF22;
+					};
+				};
+			};
+			buildConfigurationList = CEB85A9118FD39E80073CF22 /* Build configuration list for PBXProject "Timer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEB85A8D18FD39E80073CF22;
+			productRefGroup = CEB85A9718FD39E80073CF22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB85A9518FD39E80073CF22 /* Timer */,
+				CEB85ABC18FD39E90073CF22 /* TimerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB85A9418FD39E80073CF22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB85AB018FD39E90073CF22 /* Main_iPad.storyboard in Resources */,
+				CEB85AB818FD39E90073CF22 /* Images.xcassets in Resources */,
+				CEB85AAD18FD39E90073CF22 /* Main_iPhone.storyboard in Resources */,
+				CEB85AA418FD39E90073CF22 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB85ABB18FD39E90073CF22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB85AC918FD39E90073CF22 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB85A9218FD39E80073CF22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECA3AEF191774EF0019E992 /* OSSpritzLabel.m in Sources */,
+				CEB85AB618FD39E90073CF22 /* EZDetailViewController.m in Sources */,
+				CECA3AEE191774EF0019E992 /* OSSpritz.m in Sources */,
+				CEB85AA618FD39E90073CF22 /* main.m in Sources */,
+				CEB85AAA18FD39E90073CF22 /* EZAppDelegate.m in Sources */,
+				CEB85AE818FD55F20073CF22 /* EZTableViewCell.m in Sources */,
+				CEB85AB318FD39E90073CF22 /* EZMasterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB85AB918FD39E90073CF22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB85ACB18FD39E90073CF22 /* TimerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEB85AC318FD39E90073CF22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB85A9518FD39E80073CF22 /* Timer */;
+			targetProxy = CEB85AC218FD39E90073CF22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEB85AA218FD39E90073CF22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB85AA318FD39E90073CF22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CEB85AAB18FD39E90073CF22 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB85AAC18FD39E90073CF22 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CEB85AAE18FD39E90073CF22 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB85AAF18FD39E90073CF22 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CEB85AC718FD39E90073CF22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB85AC818FD39E90073CF22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEB85ACC18FD39E90073CF22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB85ACD18FD39E90073CF22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEB85ACF18FD39E90073CF22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mykula Savula (493PM5P3QX)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timer/Timer-Prefix.pch";
+				INFOPLIST_FILE = "Timer/Timer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Timer;
+				PROVISIONING_PROFILE = "CD1A4BBE-6814-4AB9-891D-BCE13FB2F0E0";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CEB85AD018FD39E90073CF22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mykula Savula (493PM5P3QX)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timer/Timer-Prefix.pch";
+				INFOPLIST_FILE = "Timer/Timer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Timer;
+				PROVISIONING_PROFILE = "CD1A4BBE-6814-4AB9-891D-BCE13FB2F0E0";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CEB85AD218FD39E90073CF22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timer.app/Timer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timer/Timer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TimerTests/TimerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CEB85AD318FD39E90073CF22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timer.app/Timer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timer/Timer-Prefix.pch";
+				INFOPLIST_FILE = "TimerTests/TimerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB85A9118FD39E80073CF22 /* Build configuration list for PBXProject "Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB85ACC18FD39E90073CF22 /* Debug */,
+				CEB85ACD18FD39E90073CF22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB85ACE18FD39E90073CF22 /* Build configuration list for PBXNativeTarget "Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB85ACF18FD39E90073CF22 /* Debug */,
+				CEB85AD018FD39E90073CF22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB85AD118FD39E90073CF22 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB85AD218FD39E90073CF22 /* Debug */,
+				CEB85AD318FD39E90073CF22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB85A8E18FD39E80073CF22 /* Project object */;
+}
