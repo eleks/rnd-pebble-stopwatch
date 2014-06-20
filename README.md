@@ -1,4 +1,7 @@
-rnd-pebble-stopwatch
+rnd-smartwatch-time-tracking
 ====================
 
-Simple stopwatch application for Pebble
+Simple time tracking application for 
+
+ - Pebble
+ - Sony Smartwatch 2
